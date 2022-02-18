@@ -14,6 +14,15 @@
 		9D85182227BF2FA6006DF722 /* DoorDashExperiments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D85182027BF2FA6006DF722 /* DoorDashExperiments.xcdatamodeld */; };
 		9D85182427BF2FA7006DF722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D85182327BF2FA7006DF722 /* Assets.xcassets */; };
 		9D85182727BF2FA7006DF722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D85182527BF2FA7006DF722 /* LaunchScreen.storyboard */; };
+		9D85183027BF2FCC006DF722 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85182F27BF2FCC006DF722 /* Menu.swift */; };
+		9D85183227BF3015006DF722 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85183127BF3015006DF722 /* Store.swift */; };
+		9D85183427BF35ED006DF722 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85183327BF35ED006DF722 /* MenuItem.swift */; };
+		9D85183727BF43E1006DF722 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85183627BF43E1006DF722 /* MenuItemCell.swift */; };
+		9D85183927BF49B8006DF722 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85183827BF49B8006DF722 /* Modifier.swift */; };
+		9D85183C27BF4D8B006DF722 /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85183B27BF4D8B006DF722 /* AddItemTableViewController.swift */; };
+		9D85183E27BF4D99006DF722 /* AddModifierTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85183D27BF4D99006DF722 /* AddModifierTableViewController.swift */; };
+		9D85184027BF4F4F006DF722 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85183F27BF4F4F006DF722 /* MenuTableViewController.swift */; };
+		9D85184227BF60C6006DF722 /* TextEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85184127BF60C6006DF722 /* TextEntryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		9D85182327BF2FA7006DF722 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D85182627BF2FA7006DF722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D85182827BF2FA7006DF722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D85182F27BF2FCC006DF722 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		9D85183127BF3015006DF722 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9D85183327BF35ED006DF722 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		9D85183627BF43E1006DF722 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		9D85183827BF49B8006DF722 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
+		9D85183B27BF4D8B006DF722 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
+		9D85183D27BF4D99006DF722 /* AddModifierTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModifierTableViewController.swift; sourceTree = "<group>"; };
+		9D85183F27BF4F4F006DF722 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		9D85184127BF60C6006DF722 /* TextEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +76,9 @@
 		9D85181627BF2FA6006DF722 /* DoorDashExperiments */ = {
 			isa = PBXGroup;
 			children = (
+				9D85183A27BF4D57006DF722 /* Controller */,
+				9D85183527BF43C8006DF722 /* Views */,
+				9D85182E27BF2FBC006DF722 /* Model */,
 				9D85181727BF2FA6006DF722 /* AppDelegate.swift */,
 				9D85181927BF2FA6006DF722 /* SceneDelegate.swift */,
 				9D85181B27BF2FA6006DF722 /* ViewController.swift */,
@@ -68,6 +89,36 @@
 				9D85182027BF2FA6006DF722 /* DoorDashExperiments.xcdatamodeld */,
 			);
 			path = DoorDashExperiments;
+			sourceTree = "<group>";
+		};
+		9D85182E27BF2FBC006DF722 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D85182F27BF2FCC006DF722 /* Menu.swift */,
+				9D85183127BF3015006DF722 /* Store.swift */,
+				9D85183327BF35ED006DF722 /* MenuItem.swift */,
+				9D85183827BF49B8006DF722 /* Modifier.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D85183527BF43C8006DF722 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D85183627BF43E1006DF722 /* MenuItemCell.swift */,
+				9D85184127BF60C6006DF722 /* TextEntryTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D85183A27BF4D57006DF722 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D85183F27BF4F4F006DF722 /* MenuTableViewController.swift */,
+				9D85183B27BF4D8B006DF722 /* AddItemTableViewController.swift */,
+				9D85183D27BF4D99006DF722 /* AddModifierTableViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +192,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D85183427BF35ED006DF722 /* MenuItem.swift in Sources */,
+				9D85183727BF43E1006DF722 /* MenuItemCell.swift in Sources */,
 				9D85182227BF2FA6006DF722 /* DoorDashExperiments.xcdatamodeld in Sources */,
 				9D85181C27BF2FA6006DF722 /* ViewController.swift in Sources */,
 				9D85181827BF2FA6006DF722 /* AppDelegate.swift in Sources */,
+				9D85183E27BF4D99006DF722 /* AddModifierTableViewController.swift in Sources */,
+				9D85183227BF3015006DF722 /* Store.swift in Sources */,
+				9D85183C27BF4D8B006DF722 /* AddItemTableViewController.swift in Sources */,
+				9D85184027BF4F4F006DF722 /* MenuTableViewController.swift in Sources */,
 				9D85181A27BF2FA6006DF722 /* SceneDelegate.swift in Sources */,
+				9D85184227BF60C6006DF722 /* TextEntryTableViewCell.swift in Sources */,
+				9D85183027BF2FCC006DF722 /* Menu.swift in Sources */,
+				9D85183927BF49B8006DF722 /* Modifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
