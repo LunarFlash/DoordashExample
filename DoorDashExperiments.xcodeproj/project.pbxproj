@@ -23,6 +23,7 @@
 		9D85183E27BF4D99006DF722 /* AddModifierTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85183D27BF4D99006DF722 /* AddModifierTableViewController.swift */; };
 		9D85184027BF4F4F006DF722 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85183F27BF4F4F006DF722 /* MenuTableViewController.swift */; };
 		9D85184227BF60C6006DF722 /* TextEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85184127BF60C6006DF722 /* TextEntryTableViewCell.swift */; };
+		9D85184527BFFB1B006DF722 /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D85184327BFFB1B006DF722 /* AddItem.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9D85183D27BF4D99006DF722 /* AddModifierTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModifierTableViewController.swift; sourceTree = "<group>"; };
 		9D85183F27BF4F4F006DF722 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		9D85184127BF60C6006DF722 /* TextEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryTableViewCell.swift; sourceTree = "<group>"; };
+		9D85184427BFFB1B006DF722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DoorDashExperiments/Base.lproj/AddItem.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		9D85181627BF2FA6006DF722 /* DoorDashExperiments */ = {
 			isa = PBXGroup;
 			children = (
+				9D85184627C0039C006DF722 /* Data */,
 				9D85183A27BF4D57006DF722 /* Controller */,
 				9D85183527BF43C8006DF722 /* Views */,
 				9D85182E27BF2FBC006DF722 /* Model */,
@@ -83,6 +86,7 @@
 				9D85181927BF2FA6006DF722 /* SceneDelegate.swift */,
 				9D85181B27BF2FA6006DF722 /* ViewController.swift */,
 				9D85181D27BF2FA6006DF722 /* Main.storyboard */,
+				9D85184327BFFB1B006DF722 /* AddItem.storyboard */,
 				9D85182327BF2FA7006DF722 /* Assets.xcassets */,
 				9D85182527BF2FA7006DF722 /* LaunchScreen.storyboard */,
 				9D85182827BF2FA7006DF722 /* Info.plist */,
@@ -119,6 +123,13 @@
 				9D85183D27BF4D99006DF722 /* AddModifierTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9D85184627C0039C006DF722 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D85182727BF2FA7006DF722 /* LaunchScreen.storyboard in Resources */,
+				9D85184527BFFB1B006DF722 /* AddItem.storyboard in Resources */,
 				9D85182427BF2FA7006DF722 /* Assets.xcassets in Resources */,
 				9D85181F27BF2FA6006DF722 /* Main.storyboard in Resources */,
 			);
@@ -225,6 +237,14 @@
 				9D85182627BF2FA7006DF722 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9D85184327BFFB1B006DF722 /* AddItem.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D85184427BFFB1B006DF722 /* Base */,
+			);
+			name = AddItem.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

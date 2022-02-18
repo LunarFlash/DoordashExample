@@ -9,7 +9,7 @@ import Foundation
 
 struct Menu {
     
-    var items: [MenuItem]
+    var items: [MenuItem] = []
     
     mutating func add(item: MenuItem) {
         items.append(item)

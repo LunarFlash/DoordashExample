@@ -13,6 +13,12 @@ class AddItemTableViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    var didAddItem: ((MenuItem) -> Void)?
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

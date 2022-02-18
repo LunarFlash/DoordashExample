@@ -9,39 +9,38 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
-    var items = [MenuItem]()
+    var menu: Menu? = Menu()
 
+    @IBSegueAction func presentAddItem(_ coder: NSCoder) -> UIViewController? {
+        let storyboard = UIStoryboard.init(name: "AddItem", bundle: nil)
+        guard let nav = storyboard.instantiateInitialViewController() as? UINavigationController,
+              let vc = nav.viewControllers.first as? AddItemTableViewController
+        else { return nil }
+        
+        vc.didAddItem = { [weak self] item in
+            print(item)
+        }
+         
+        return nav
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return menu?.items.count ?? 0
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        if let item = menu?.items[indexPath.row] {
+            cell.textLabel?.text = "\(item.name) \(item.price)"
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
