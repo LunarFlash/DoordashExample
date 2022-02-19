@@ -22,6 +22,11 @@ class AddModifierTableViewController: UITableViewController {
     
     var didSaveModifier: ((Modifier?)->Void)?
     
+    
+    required init?(coder: NSCoder) {
+      fatalError("init(coder:) is not implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

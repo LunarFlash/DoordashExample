@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" title="Menu" id="cXe-Wz-T8F">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="41K-9Q-d74">
                             <connections>
-                                <segue destination="Nle-qW-BFO" kind="popoverPresentation" destinationCreationSelector="presentAddItem:" popoverAnchorBarButtonItem="41K-9Q-d74" id="Kyz-6S-I4g">
+                                <segue destination="Nle-qW-BFO" kind="popoverPresentation" identifier="toAddItem" popoverAnchorBarButtonItem="41K-9Q-d74" id="Kyz-6S-I4g">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>

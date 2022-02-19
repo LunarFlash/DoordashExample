@@ -13,13 +13,13 @@ class MenuTableViewController: UITableViewController {
 
     @IBSegueAction func presentAddItem(_ coder: NSCoder) -> UIViewController? {
         let storyboard = UIStoryboard.init(name: "AddItem", bundle: nil)
-        guard let nav = storyboard.instantiateInitialViewController() as? UINavigationController,
-              let vc = nav.viewControllers.first as? AddItemTableViewController
+        guard let nav = storyboard.instantiateInitialViewController() as? UINavigationController
+              //let vc = nav.viewControllers.first as? AddItemTableViewController
         else { return nil }
         
-        vc.didAddItem = { [weak self] item in
-            print(item)
-        }
+//        vc.didAddItem = { [weak self] item in
+//            print(item)
+//        }
          
         return nav
     }
@@ -77,14 +77,14 @@ class MenuTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toAddItem", let nav = segue.destination as? UINavigationController, let vc = nav.viewControllers.first as? AddItemTableViewController {
+            vc.didAddItem = { [weak self] item in
+                print(item)
+            }
+        }
     }
-    */
-
 }
