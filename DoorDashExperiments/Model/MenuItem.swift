@@ -13,7 +13,7 @@ struct MenuItem {
     var name: String
     var description: String
     var price: Double
-    var modifiers: [Modifier]
+    var modifiers: [Modifier] = []
     
     mutating func add(modifer: Modifier) {
         modifiers.append(modifer)

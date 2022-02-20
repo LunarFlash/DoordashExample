@@ -23,7 +23,7 @@ class AddItemTableViewController: UITableViewController {
     dismiss(animated: true, completion: nil)
   }
   
-  var item: MenuItem?
+  var item: MenuItem? = MenuItem(name: "", description: "", price: 0)
   
   var didAddItem: ((MenuItem) -> Void)?
   
@@ -37,15 +37,45 @@ class AddItemTableViewController: UITableViewController {
   
   // MARK: - Table view data source
   
-  /*
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return 4
+  }
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    switch section {
+    case 3:
+      return item?.modifiers.count ?? 0
+    default:
+      return 1
+    }
+  }
+  
+  
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-   let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
    
-   // Configure the cell...
-   
-   return cell
+     switch indexPath.section {
+     case 0:
+       let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
+       cell.textField.placeholder = "item name"
+       return cell
+     case 1:
+       let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
+       cell.textField.placeholder = "description"
+       return cell
+     case 2:
+       let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
+       cell.textField.placeholder = "price"
+       return cell
+     default:
+       let cell = tableView.dequeueReusableCell(withIdentifier: "ModifierCell", for: indexPath)
+       let modifier = item?.modifiers[indexPath.row]
+       guard let name = modifier?.name else { return cell }
+       cell.textLabel?.text = "\(name) \(String(describing: modifier?.options.count)) options"
+       return cell
+     }
+     
    }
-   */
+   
   
   /*
    // Override to support conditional editing of the table view.

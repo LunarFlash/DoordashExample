@@ -13,6 +13,7 @@ class AddModifierTableViewController: UITableViewController {
   
   @IBAction func didTapSave(_ sender: Any) {
     didSaveModifier?(modifier)
+    navigationController?.popViewController(animated: true)
   }
   
   @IBAction func didTapAddModifier(_ sender: Any) {
