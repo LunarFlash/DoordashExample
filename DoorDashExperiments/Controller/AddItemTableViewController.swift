@@ -19,13 +19,20 @@ class AddItemTableViewController: UITableViewController {
     return vc
   }
   
+  @IBAction func didTapSave(_ sender: Any) {
+    didAddItem?(item)
+    dismiss(animated: true) {
+      
+    }
+  }
+  
   @IBAction func didTapCancel(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
   
   var item: MenuItem? = MenuItem(name: "", description: "", price: 0)
   
-  var didAddItem: ((MenuItem) -> Void)?
+  var didAddItem: ((MenuItem?) -> Void)?
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
@@ -51,44 +58,44 @@ class AddItemTableViewController: UITableViewController {
   }
   
   
-   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-   
-     switch indexPath.section {
-     case 0:
-       let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
-       cell.textField.placeholder = "item name"
-       cell.didEndEditing = { [weak self] text in
-         guard let text = text else { return }
-         self?.item?.name = text
-       }
-       return cell
-     case 1:
-       let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
-       cell.textField.placeholder = "description"
-       cell.didEndEditing = { [weak self] text in
-         guard let text = text else { return }
-         self?.item?.description = text
-       }
-       return cell
-     case 2:
-       let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
-       cell.textField.placeholder = "price"
-       cell.didEndEditing = { [weak self] text in
-         guard let text = text,
-                let price = Double(text) else { return }
-         self?.item?.price = price
-       }
-       return cell
-     default:
-       let cell = tableView.dequeueReusableCell(withIdentifier: "ModifierCell", for: indexPath)
-       let modifier = item?.modifiers[indexPath.row]
-       guard let name = modifier?.name else { return cell }
-       cell.textLabel?.text = "\(name) \(String(describing: modifier?.options.count)) options"
-       return cell
-     }
-     
-   }
-   
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    switch indexPath.section {
+    case 0:
+      let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
+      cell.textField.placeholder = "item name"
+      cell.didEndEditing = { [weak self] text in
+        guard let text = text else { return }
+        self?.item?.name = text
+      }
+      return cell
+    case 1:
+      let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
+      cell.textField.placeholder = "description"
+      cell.didEndEditing = { [weak self] text in
+        guard let text = text else { return }
+        self?.item?.description = text
+      }
+      return cell
+    case 2:
+      let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
+      cell.textField.placeholder = "price"
+      cell.didEndEditing = { [weak self] text in
+        guard let text = text,
+              let price = Double(text) else { return }
+        self?.item?.price = price
+      }
+      return cell
+    default:
+      let cell = tableView.dequeueReusableCell(withIdentifier: "ModifierCell", for: indexPath)
+      let modifier = item?.modifiers[indexPath.row]
+      guard let name = modifier?.name else { return cell }
+      cell.textLabel?.text = "\(name) \(modifier?.options.count ?? 0) options"
+      return cell
+    }
+    
+  }
+  
   
   /*
    // Override to support conditional editing of the table view.

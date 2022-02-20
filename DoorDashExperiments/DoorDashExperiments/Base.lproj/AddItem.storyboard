@@ -61,11 +61,18 @@
                                 <action selector="didTapCancel:" destination="949-4q-o3T" id="X6o-Mm-dkV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+Mod" id="vkC-t6-CIQ">
-                            <connections>
-                                <segue destination="CAk-eE-hOh" kind="show" destinationCreationSelector="toAddModSegue:" id="wUT-dr-797"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="+Mod" id="vkC-t6-CIQ">
+                                <connections>
+                                    <segue destination="CAk-eE-hOh" kind="show" destinationCreationSelector="toAddModSegue:" id="wUT-dr-797"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="save" id="dgR-44-7cu">
+                                <connections>
+                                    <action selector="didTapSave:" destination="949-4q-o3T" id="rIO-WN-c0W"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B37-Ps-VDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
