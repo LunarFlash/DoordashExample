@@ -11,7 +11,6 @@ class AddModifierTableViewController: UITableViewController {
   
   var modifier: Modifier?
   
-  
   @IBAction func didTapSave(_ sender: Any) {
     didSaveModifier?(modifier)
   }
