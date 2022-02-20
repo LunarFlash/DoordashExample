@@ -10,19 +10,6 @@ import UIKit
 class MenuTableViewController: UITableViewController {
     
     var menu: Menu? = Menu()
-
-    @IBSegueAction func presentAddItem(_ coder: NSCoder) -> UIViewController? {
-        let storyboard = UIStoryboard.init(name: "AddItem", bundle: nil)
-        guard let nav = storyboard.instantiateInitialViewController() as? UINavigationController
-              //let vc = nav.viewControllers.first as? AddItemTableViewController
-        else { return nil }
-        
-//        vc.didAddItem = { [weak self] item in
-//            print(item)
-//        }
-         
-        return nav
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +70,9 @@ class MenuTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddItem", let nav = segue.destination as? UINavigationController, let vc = nav.viewControllers.first as? AddItemTableViewController {
             vc.didAddItem = { [weak self] item in
-                print(item)
+              guard let item = item else { return }
+              self?.menu?.items.append(item)
+              self?.tableView.reloadData()
             }
         }
     }
