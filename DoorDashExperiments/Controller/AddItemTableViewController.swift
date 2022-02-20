@@ -57,14 +57,27 @@ class AddItemTableViewController: UITableViewController {
      case 0:
        let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
        cell.textField.placeholder = "item name"
+       cell.didEndEditing = { [weak self] text in
+         guard let text = text else { return }
+         self?.item?.name = text
+       }
        return cell
      case 1:
        let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
        cell.textField.placeholder = "description"
+       cell.didEndEditing = { [weak self] text in
+         guard let text = text else { return }
+         self?.item?.description = text
+       }
        return cell
      case 2:
        let cell = tableView.dequeueReusableCell(withIdentifier: "TextEntryCell", for: indexPath) as! TextEntryTableViewCell
        cell.textField.placeholder = "price"
+       cell.didEndEditing = { [weak self] text in
+         guard let text = text,
+                let price = Double(text) else { return }
+         self?.item?.price = price
+       }
        return cell
      default:
        let cell = tableView.dequeueReusableCell(withIdentifier: "ModifierCell", for: indexPath)
