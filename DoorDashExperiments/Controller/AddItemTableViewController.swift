@@ -20,9 +20,8 @@ class AddItemTableViewController: UITableViewController {
   }
   
   @IBAction func didTapSave(_ sender: Any) {
-    didAddItem?(item)
-    dismiss(animated: true) {
-      
+    dismiss(animated: true) { [weak self] in
+      self?.didAddItem?(self?.item)
     }
   }
   
