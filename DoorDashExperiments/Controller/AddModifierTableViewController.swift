@@ -53,11 +53,15 @@ class AddModifierTableViewController: UITableViewController {
     switch indexPath.section {
     case 0:
       let cell = tableView.dequeueReusableCell(withIdentifier: TextEntryTableViewCell.reuseIdentifer, for: indexPath) as! TextEntryTableViewCell
-      
       if let modifier = modifier {
         cell.textField.text = modifier.name
       } else {
         cell.textField.text = nil
+      }
+      
+      cell.didEndEditing = { [weak self] text in
+        guard let text = text else { return }
+        self?.modifier?.name = text
       }
       
       return cell

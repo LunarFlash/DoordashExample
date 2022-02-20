@@ -9,9 +9,21 @@ import UIKit
 
 class AddItemTableViewController: UITableViewController {
   
+  @IBSegueAction func toAddModSegue(_ coder: NSCoder) -> AddModifierTableViewController? {
+    let vc = AddModifierTableViewController(coder: coder)
+    vc?.didSaveModifier = { [weak self] mod in
+      guard let mod = mod else { return }
+      self?.item?.modifiers.append(mod)
+      self?.tableView.reloadData()
+    }
+    return vc
+  }
+  
   @IBAction func didTapCancel(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
+  
+  var item: MenuItem?
   
   var didAddItem: ((MenuItem) -> Void)?
   
@@ -51,7 +63,7 @@ class AddItemTableViewController: UITableViewController {
    tableView.deleteRows(at: [indexPath], with: .fade)
    } else if editingStyle == .insert {
    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-   }    
+   }
    }
    */
   

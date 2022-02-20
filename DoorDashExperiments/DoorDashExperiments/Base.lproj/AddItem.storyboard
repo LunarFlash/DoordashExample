@@ -58,7 +58,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+Mod" id="vkC-t6-CIQ">
                             <connections>
-                                <segue destination="CAk-eE-hOh" kind="show" id="wUT-dr-797"/>
+                                <segue destination="CAk-eE-hOh" kind="show" destinationCreationSelector="toAddModSegue:" id="wUT-dr-797"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

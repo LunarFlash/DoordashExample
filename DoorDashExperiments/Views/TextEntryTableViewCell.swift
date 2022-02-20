@@ -8,20 +8,28 @@
 import UIKit
 
 class TextEntryTableViewCell: UITableViewCell {
+  
+  static let reuseIdentifer = "TextEntryCell"
+  
+  @IBOutlet weak var textField: UITextField!
+  
+  var didEndEditing: ((String?) -> Void)?
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    textField.delegate = self
+  }
+  
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
     
-    static let reuseIdentifer = "TextEntryCell"
+    // Configure the view for the selected state
+  }
+  
+}
 
-    @IBOutlet weak var textField: UITextField!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+extension TextEntryTableViewCell: UITextFieldDelegate {
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    didEndEditing?(textField.text)
+  }
 }
