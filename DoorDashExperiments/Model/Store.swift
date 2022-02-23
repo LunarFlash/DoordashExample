@@ -11,7 +11,6 @@ struct Store {
     var name: String
     var menus: [Menu]
     
-    
     mutating func addMenu(menu: Menu) {
         menus.append(menu)
     }

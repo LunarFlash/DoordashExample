@@ -11,7 +11,7 @@ import Foundation
 struct MenuItem {
     
     var name: String
-    var description: String
+    var description: String?
     var price: Double
     var modifiers: [Modifier] = []
     
